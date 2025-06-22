@@ -1,82 +1,47 @@
 # ALXprodev-advanced_git
 
-A sleek, comprehensive resource for advanced Git workflows, techniques, and best practices.
+## Overview
+
+This project is part of the ALX Software Engineering curriculum and focuses on mastering advanced Git concepts with a strong emphasis on the Git-Flow branching model. The goal is to set up, understand, and practice collaborative workflows in real-world software development environments.
 
 ---
 
-## About
+## Objectives
 
-**ALXprodev-advanced_git** is crafted for developers seeking to master advanced Git concepts. This repository covers practical scenarios, workflow patterns, and powerful commands to elevate your version control skills beyond the basics.
-
----
-
-## Repository Structure
-
-```
-.
-├── docs/          Documentation and guides
-├── examples/      Real-world Git scenarios and solutions
-├── scripts/       Automation scripts for Git workflows
-└── README.md      This file
-```
+- Initialize a Git repository and set up Git-Flow.
+- Understand and apply the Git-Flow branching strategy.
+- Learn how to manage `feature`, `release`, and `hotfix` branches.
+- Collaborate effectively using structured branching and merging techniques.
 
 ---
 
-## Features
+## Git-Flow Branch Types
 
-- Advanced branching, merging, and rebase workflows
-- Interactive rebasing and history rewriting
-- Conflict resolution strategies
-- Git hooks and workflow automation
-- Collaboration patterns for teams
-- Recovery techniques and troubleshooting
-- Tips on stashing, cherry-picking, bisecting, reflog, and more
+- **main**: Contains stable, production-ready code.
+- **develop**: Integration branch for ongoing development.
+- **feature/**: Used for new feature development from `develop`.
+- **release/**: Prepares code from `develop` for deployment to `main`.
+- **hotfix/**: Directly fixes bugs on `main` and merges back into both `main` and `develop`.
 
 ---
 
-## Prerequisites
+## Project Setup Steps
 
-- [Git](https://git-scm.com/) version 2.20 or higher
-- Basic command-line proficiency
-
----
-
-## Getting Started
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/reuben-idan/ALXprodev-advanced_git.git
-   cd ALXprodev-advanced_git
-   ```
-
-2. Explore usage examples in [`examples/`](examples/)
-
-3. Read detailed guides in [`docs/`](docs/)
+1. Install Git-Flow if not already available.
+2. Create and clone an empty repository named `ALXprodev-advanced_git`.
+3. Create and push a `develop` branch.
+4. Initialize Git-Flow using default settings with `git flow init -d`.
+5. Create an empty `README.md` file and commit it to the `develop` branch.
 
 ---
 
-## Contributing
+## Git-Flow Commands Cheat Sheet
 
-Contributions are welcome. To propose improvements or share new workflows:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/your-feature`)
-3. Commit your changes (`git commit -am 'Describe feature'`)
-4. Push your branch (`git push origin feature/your-feature`)
-5. Open a pull request
-
-Please review the [contributing guidelines](docs/CONTRIBUTING.md) before submitting.
-
----
-
-## License
-
-Distributed under the [MIT License](LICENSE).
-
----
-
-## Acknowledgements
-
-- ALX Software Engineering Program
-- The broader professional developer community
-- All contributors
+```bash
+git flow init                     # Initialize Git-Flow with default branch settings
+git flow feature start <name>    # Start a new feature branch
+git flow feature finish <name>   # Finish feature and merge back into develop
+git flow release start <version> # Create a release branch from develop
+git flow release finish <version> # Merge release into main and develop
+git flow hotfix start <version>  # Start a hotfix from main
+git flow hotfix finish <version> # Merge hotfix into main and develop
